@@ -179,7 +179,7 @@ export default function Home({ pageData }) {
               <img src={pageData.logotipas.url} />
             </div>
             <ul>
-              <a href='#apie-mus'><li>APIE MUS</li></a>
+              {/* <a href='#apie-mus'><li>APIE MUS</li></a> */}
               <a href='#paslaugos'><li>PASLAUGOS</li></a>
               <a href='#es-projektai'><li>ES PROJEKTAI</li></a>
               <a href='#galerija'><li>GALERIJA</li></a>
@@ -212,7 +212,7 @@ export default function Home({ pageData }) {
               <img src='https://res.cloudinary.com/dxdmya6ui/image/upload/v1620830689/close_1_5f5b283ba3.svg?2362984.58' />
             </div>
             <ul>
-              <a href='#apie-mus' onClick={() => setShowResponsiveMenu(false)}><li>APIE MUS</li></a>
+              {/* <a href='#apie-mus' onClick={() => setShowResponsiveMenu(false)}><li>APIE MUS</li></a> */}
               <a href='#paslaugos' onClick={() => setShowResponsiveMenu(false)}><li>PASLAUGOS</li></a>
               <a href='#es-projektai' onClick={() => setShowResponsiveMenu(false)}><li>ES PROJEKTAI</li></a>
               <a href='#galerija' onClick={() => setShowResponsiveMenu(false)}><li>GALERIJA</li></a>
@@ -237,23 +237,23 @@ export default function Home({ pageData }) {
             </div>
           </div>
         </section>
-        <section className='about-us' id='apie-mus'>
+        {/* <section className='about-us' id='apie-mus'>
           <div className='wrapper'>
             <div className='left'>
               <h2><img src='https://res.cloudinary.com/dxdmya6ui/image/upload/v1620810788/Daco_2373189_83aa6a1bda.png?93325.09000000027' />Apie mus</h2>
             </div>
             <div className='right' dangerouslySetInnerHTML={{__html: `${marked(pageData.apie_mus)}`}}></div>
           </div>
-        </section>
-        <section className='about-us light-blue-bg' id='paslaugos'>
+        </section> */}
+        <section className='about-us' id='paslaugos'>
           <div className='wrapper row-reverse'>
             <div className='left'>
-              <h2 className='color-white'><img src='https://res.cloudinary.com/dxdmya6ui/image/upload/v1620812848/painter_8b32ec125d.png?2150974.9950000006' />Paslaugos</h2>
+              <h2><img src='https://res.cloudinary.com/dxdmya6ui/image/upload/v1620812848/painter_8b32ec125d.png?2150974.9950000006' />Paslaugos</h2>
             </div>
-            <div className='right color-white' dangerouslySetInnerHTML={{__html: `${marked(pageData.paslaugos)}`}}></div>
+            <div className='right' dangerouslySetInnerHTML={{__html: `${marked(pageData.paslaugos)}`}}></div>
           </div>
         </section>
-        <section className='why-us'>
+        {/* <section className='why-us'>
           <h2>Kodėl rinktis mus?</h2>
           <div className='wrapper'>
             {pageData.kodel_mes.map(item => 
@@ -264,13 +264,13 @@ export default function Home({ pageData }) {
               </div>
               )}
           </div>
-        </section>
+        </section> */}
         <section className='es-projects' id='es-projektai'>
-          <h2>ES PROJEKTAI</h2>
+          <h2>ES projektai</h2>
             <div className='wrapper' dangerouslySetInnerHTML={{__html: `${marked(pageData.es_projektai)}`}}></div>
         </section>
         <section className='gallery' id='galerija'>
-          <h2>GALERIJA</h2>
+          <h2>Galerija</h2>
           <div className='wrapper'>
           { 
               pageData.paveiksleliu_galerija.length > 0 ? 
@@ -296,7 +296,7 @@ export default function Home({ pageData }) {
             <p className='find-us-text'>Įmonė</p>
               <p className='content'>
                 { pageData.imones_pavadinimas }<br />
-                Įmonės kodas: 304998962
+                Įmonės kodas: {pageData.imones_kodas}
               </p>
             <p className='find-us-text'>Telefonas</p>
               <p className='content'>
@@ -305,6 +305,10 @@ export default function Home({ pageData }) {
               <p className='find-us-text'>El. paštas</p>
               <p className='content'>
               { pageData.el_pastas }
+              </p>
+              <p className='find-us-text'>PVM mokėtojo kodas</p>
+              <p className='content'>
+              { pageData.pvm_kodas }
               </p>
               <p className='find-us-text'>Raskite mus žemėlapyje</p>
               <p className='content'>
@@ -361,7 +365,7 @@ export default function Home({ pageData }) {
           <div className='right'>
             <p>
             { pageData.imones_pavadinimas }<br />
-              <b>Įmonės kodas: </b>304998962<br />
+              <b>Įmonės kodas: </b>{ pageData.imones_kodas }<br />
               <b>Telefonas: </b>{ pageData.telefono_numeris }<br />
               <b>El. paštas: </b>{ pageData.el_pastas }<br />
               <b>Adresas: </b>{ pageData.adresas }
